@@ -6,7 +6,6 @@ export default function TeamComponent({teamId}) {
     const team = getClub(teamId);
     const calendar = getClubCalendar(teamId);
     const players = team.players.map(playerId => getPlayer(playerId));
-    console.log(calendar);
     return (
         <div>
             <h2>{team.name}</h2>

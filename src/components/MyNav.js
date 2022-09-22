@@ -5,7 +5,8 @@ import { useState } from "react";
 export default function MyNav(){
 
     const [searchParams, setSearchParams] = useSearchParams();
-    const [filter, setFilter] = useState("");
+    let search = searchParams.get("filter") ? searchParams.get("filter") : "";
+    const [filter, setFilter] = useState(search);
     
     function onInputChange(event){
             setFilter(event.target.value);

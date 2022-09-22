@@ -1,5 +1,5 @@
-import { getGamesOfClub, getGames,getGamesOnDay } from "../myData";
-import { useSearchParams, useLocation } from "react-router-dom";
+import { getGamesOfClub } from "../myData";
+import { useSearchParams } from "react-router-dom";
 import '../styleSheets/myGames.css'
 import GameComponent from "../components/GameComponent";
 import { useEffect, useState } from "react";
@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 export default function Games(){
     const [searchParams, setSearchParams] = useSearchParams();
     const [games, setGames] = useState([]);
-    let location = useLocation();
     let filter = searchParams.get("filter");
     useEffect(() => {
         setGames(getGamesOfClub(filter));
