@@ -1,8 +1,8 @@
-import { getGamesOfClub } from "../myData";
 import { useSearchParams } from "react-router-dom";
-import '../styleSheets/myGames.css'
-import GameComponent from "../components/GameComponent";
 import { useEffect, useState } from "react";
+
+import { getGamesOfClub } from "../myData";
+import GamesComponent from "../components/games/GamesComponent";
 
 export default function Games(){
     const [searchParams, setSearchParams] = useSearchParams();
@@ -16,14 +16,6 @@ export default function Games(){
     let month = today.getMonth() + 1;
     let year = today.getFullYear();
     return(
-        <div className="gamesList">
-            {games.map((game) => (
-                    <GameComponent
-                        key={game.id} 
-                        gameId = {game.id}
-                    >
-                    </GameComponent>
-            ))}
-        </div>
+        <GamesComponent games = {games}/>
     );
 }

@@ -1,6 +1,7 @@
-import { getClub, getPlayer, getClubCalendar } from "../myData";
 import { Link } from "react-router-dom";
-import GameComponent from "./GameComponent";
+
+import GameComponent from "../game/GameComponent.js"
+import { getClub, getPlayer, getClubCalendar } from "../../myData";
 
 export default function TeamComponent({teamId}) {
     const team = getClub(teamId);

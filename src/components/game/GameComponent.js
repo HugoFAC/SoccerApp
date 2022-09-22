@@ -1,5 +1,7 @@
-import { getGame,getClubs } from "../myData";
 import { Link } from "react-router-dom";
+
+import "../game/GameComponent.css";
+import { getGame,getClubs } from "../../myData";
 
 export default function GameComponent({gameId}){
     const game = getGame(gameId);

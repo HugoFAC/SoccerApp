@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+
 import { getClub, getLeague } from "../myData";
 
 export default function League() {

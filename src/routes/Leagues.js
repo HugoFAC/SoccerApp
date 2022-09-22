@@ -1,5 +1,5 @@
-import { getLeagues } from "../myData";
 import { Link, useSearchParams } from "react-router-dom";
+import { getLeagues } from "../myData";
 
 export default function Leagues(){
     const leagues = getLeagues();

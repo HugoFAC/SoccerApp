@@ -1,5 +1,6 @@
-import { getPlayer } from "../myData";
 import { useParams } from "react-router-dom";
+
+import { getPlayer } from "../myData";
 
 export default function Player(){
     const params = useParams();
