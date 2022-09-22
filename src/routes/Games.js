@@ -1,26 +1,24 @@
-import { getGames,getClubs,getGamesOnDay } from "../myData";
-import { useSearchParams } from "react-router-dom";
+import { getGamesOfClub, getGames,getGamesOnDay } from "../myData";
+import { useSearchParams, useLocation } from "react-router-dom";
 import '../styleSheets/myGames.css'
 import GameComponent from "../components/GameComponent";
+import { useEffect, useState } from "react";
 
 export default function Games(){
-    const clubs = getClubs();
-    let [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [games, setGames] = useState([]);
+    let location = useLocation();
+    let filter = searchParams.get("filter");
+    useEffect(() => {
+        setGames(getGamesOfClub(filter));
+    },[filter]);
     const today = new Date();
     let date = today.getDate();
     let month = today.getMonth() + 1;
-    let year = today.getFullYear()
-    const games = getGames();
-    console.log(games);
+    let year = today.getFullYear();
     return(
         <div className="gamesList">
-            {games.filter((game) => {
-                let filter = searchParams.get("filter");
-                if (!filter) return true;
-                let name1 = clubs[game.club1].name.toLowerCase();
-                let name2 = clubs[game.club2].name.toLowerCase();
-                return (name1.includes(filter.toLowerCase()) || name2.includes(filter.toLocaleLowerCase()));
-                }).map((game) => (
+            {games.map((game) => (
                     <GameComponent
                         key={game.id} 
                         gameId = {game.id}

@@ -810,7 +810,15 @@ export function getClubCalendar(clubId){
 	return games.filter(
 		game=>(game.club1 === clubId || game.club2 === clubId)
 	).map((game) => {return game});
+}
 
+export function getGamesOfClub(clubName){
+	let filter = "";
+	clubName && (filter = clubName);
+	return games.filter(game => (
+		clubs[game.club1].name.toLowerCase().includes(filter.toLowerCase()) || 
+		clubs[game.club2].name.toLowerCase().includes(filter.toLowerCase()))
+	).map((game) => {return game});
 }
 
 export function getGamesOnDay(day){
