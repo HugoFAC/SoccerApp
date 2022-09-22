@@ -1,0 +1,31 @@
+.gamesList{
+    border: 0.1em solid;
+    padding: 0.5em;
+}
+
+.gameLine{
+    border: 0.1em solid;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    margin: 0.1em;
+    font-size: 1em;
+    display: flex;
+}
+.teamLinkLeft{
+    float: left;
+    font-size: 1em;
+    padding: 0.1em 0.5em 0.1em 0.5em;
+    flex-basis: 45%;
+    text-align: right;
+}
+.middle{
+    flex-basis: 10%;
+    text-align: center;
+}
+.teamLinkRight{
+    float: right;
+    font-size: 1em;
+    padding: 0.1em 0.5em 0.1em 0.5em;
+    flex-basis: 45%;
+    text-align: left;
+}

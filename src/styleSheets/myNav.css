@@ -1,0 +1,16 @@
+.mainNav{
+    border-style: solid;
+    border-width: 0.1em;
+    padding: 0.5em;
+}
+.red{
+    color:red;
+    margin-left: 1em;
+}
+.blue{
+    color:black;
+    margin-left: 1em;
+}
+.searchInput{
+    float: right;
+}
