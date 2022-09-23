@@ -1,26 +1,19 @@
 import { Link, useSearchParams } from "react-router-dom";
-import { getLeagues } from "../myData";
+import { getLeaguesByName } from "../myData";
+import { useState, useEffect } from "react";
+
+import LeaguesComponent from "../components/leaguesComponent/LeaguesComponent.js";
 
 export default function Leagues(){
-    const leagues = getLeagues();
-    let [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [leagues, setLeagues] = useState([]);
+    let filter = searchParams.get("filter");
+
+    useEffect(() => {
+        setLeagues(getLeaguesByName(filter));
+    },[filter]);
+
     return(
-        <>
-        <h1>LeaguesList</h1>
-        {leagues.filter((league) => {
-            let filter = searchParams.get("filter");
-            if (!filter) return true;
-            let name = league.name.toLowerCase();
-            return name.includes(filter.toLowerCase());
-          }).map((league) => (
-            <Link
-                style={{ display: "block", margin: "1rem 0" }}
-                to={`/leagues/${league.id}`}
-                key={league.id}
-            >
-                {league.name}
-            </Link>
-        ))}
-        </>
+        <LeaguesComponent leagues={leagues}/>
     );
 }

@@ -1,6 +1,6 @@
 import './App.css';
-import Header from './components/header/Header';
-import MyNav from './components/myNav/MyNav';
+import Header from './components/headerComponent/Header';
+import MyNav from './components/myNavComponent/MyNav';
 
 function App() {
   return (

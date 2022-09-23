@@ -1,5 +1,5 @@
-import GameComponent from "../game/GameComponent.js"
-import "../games/GamesComponent.css";
+import GameComponent from "../gameComponent/GameComponent.js"
+import "./GamesComponent.css";
 
 export default function GamesComponent({games}){
 

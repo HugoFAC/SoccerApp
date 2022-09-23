@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import GameComponent from "../game/GameComponent.js"
+import GamesComponent from "../gamesComponent/GamesComponent.js";
 import { getClub, getPlayer, getClubCalendar } from "../../myData";
 
 export default function TeamComponent({teamId}) {
@@ -24,13 +24,7 @@ export default function TeamComponent({teamId}) {
             </div>
             <div>
                 <h3>Calendar</h3>
-                {calendar.map((game) => (
-                    <GameComponent
-                        key={game.id} 
-                        gameId = {game.id}
-                    >
-                    </GameComponent>
-            ))}
+                <GamesComponent games={calendar}/>
             </div>
         </div>
     );

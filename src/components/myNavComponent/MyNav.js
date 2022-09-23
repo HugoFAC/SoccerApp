@@ -1,7 +1,7 @@
 import { NavLink, Outlet, useSearchParams } from "react-router-dom";
 import { useState } from "react";
 
-import '../myNav/myNav.css';
+import './myNav.css';
 
 export default function MyNav(){
 

@@ -760,7 +760,7 @@ export function getLeagues() {
 }
 
 export function getLeaguesByName(leagueName){
-	let lName = leagueName.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+	let lName = leagueName ? leagueName.normalize("NFD").replace(/[\u0300-\u036f]/g, "") : "";
 	return leagues.filter(
 		league => league.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(lName.toLowerCase())
 	);
@@ -774,6 +774,13 @@ export function getLeague(leagueId) {
 
 export function getClubs() {
 	return clubs;
+}
+
+export function getClubsByName(clubName) {
+	let cName = clubName.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+	return Object.entries(clubs).filter(
+		club => club[1].name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(cName.toLowerCase())
+	);
 }
 
 export function getClub(clubId) {
