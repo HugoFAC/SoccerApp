@@ -7,7 +7,7 @@ export default function HeaderComponent(){
     const [username, setUserName] = useLocalStorage("name", "");
 
     const logout = () => {
-        localStorage.clear();
+        //localStorage.clear();
         setUserName("");
     }
 

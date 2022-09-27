@@ -755,6 +755,26 @@ const clubs = {
 	}
 };
 
+const users = {
+	14157860:{
+		username: "Koala",
+		password: "pass123"
+	},
+	12345678:{
+		username: "Lemur",
+		password: "password"
+	}
+}
+
+export function getUser(usr, pass){
+	let user = Object.entries(users).filter(u => u[1].username == usr);
+	if(user.length == 0) 
+		return "No such username";
+	if(user[0][1].password == pass)
+		return user[0][1].username;
+	return "Wrong password";
+}
+
 export function getLeagues() {
 	return leagues;
 }
