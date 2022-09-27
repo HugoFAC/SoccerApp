@@ -1,17 +1,17 @@
 const leagues = [
 	{
 		id: "portugueseLeague1",
-		name:"Liga Portuguesa",
+		name:"Liga NOS",
 		clubs:["scp","slb","fcp","scb","bfc"]
 	},
 	{
 		id: "englishLeague1",
-		name:"English League",
+		name:"Premier League",
 		clubs:["mutd","mcity","liv","che","ars"]
 	},
 	{
 		id: "spanishLeague1",
-		name:"Liga Espanola",
+		name:"Liga Santander",
 		clubs:["rmad","bar","atlm","val","sev"]
 	}
 ];

@@ -1,7 +1,14 @@
 .teamsList{
+    border: 0.1em solid black;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2em;
 }
 
 .teamLine{
-    display: block;
+    border:0.1em solid black;
+    border-radius: 0.2em;
     text-align: center;
+    margin: 0.1em;
+    flex-basis: 32%;
 }
