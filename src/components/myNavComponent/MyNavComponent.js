@@ -1,9 +1,9 @@
 import { NavLink, Outlet, useSearchParams } from "react-router-dom";
 import { useState } from "react";
 
-import './myNav.css';
+import './MyNavComponent.css';
 
-export default function MyNav(){
+export default function MyNavComponent(){
 
     const [searchParams, setSearchParams] = useSearchParams();
     let search = searchParams.get("filter") ? searchParams.get("filter") : "";

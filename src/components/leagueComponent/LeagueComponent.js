@@ -5,7 +5,7 @@ import { getClub } from "../../myData";
 export default function LeagueComponent({league}){
 
     return(
-        <div>
+        <div className="teamsList">
             {league.clubs.map((teamId) => (
                 <Link
                 style={{ display: "block", margin: "1rem 0" }}

@@ -1,12 +1,12 @@
 import './App.css';
-import Header from './components/headerComponent/Header';
-import MyNav from './components/myNavComponent/MyNav';
+import HeaderComponent from './components/headerComponent/HeaderComponent';
+import MyNavComponent from './components/myNavComponent/MyNavComponent';
 
 function App() {
   return (
     <div className='App'>
-      <Header></Header>
-      <MyNav></MyNav>
+      <HeaderComponent/>
+      <MyNavComponent/>
     </div>
   );
 }

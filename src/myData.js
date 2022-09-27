@@ -828,6 +828,17 @@ export function getGamesOfClub(clubName){
 	).map((game) => {return game});
 }
 
+export function getUnplayedGames(clubName){
+	let filter = "";
+	clubName && (filter = clubName);
+	return games.filter(game => (
+		(clubs[game.club1].name.toLowerCase().includes(filter.toLowerCase()) || 
+		clubs[game.club2].name.toLowerCase().includes(filter.toLowerCase())) && 
+		game.result[0]<0
+		)
+	).map((game) => {return game});
+}
+
 export function getGamesOnDay(day){
 	const dateArray = day.split("/");
 	return games.filter(

@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 
+import './TeamsComponent.css'
+
 export default function TeamsComponent({teams}){
 
     return (
-        <div>
-            <h1>Teams List</h1>
+        <div className="teamsList">
+            <h2 className="title">Teams</h2>
             {teams.map((club) => (
                 <Link
-                    style={{ display: "block", margin: "1rem 0" }}
+                    className="teamLine"
                     to={`/teams/${club[0]}`}
                     key={club[0]}
                 >
