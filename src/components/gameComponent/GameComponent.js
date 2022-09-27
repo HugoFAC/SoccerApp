@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
 import "./GameComponent.css";
-import { getGame,getClubs } from "../../myData";
+import { getClub } from "../../myData";
 
-export default function GameComponent({gameId}){
-    const game = getGame(gameId);
-    const clubs = getClubs();
+export default function GameComponent({game}){
+    const club1 = getClub(game.club1);
+    const club2 = getClub(game.club2);
     let mid;
     const finished = game.result[0]>-1 ? mid = game.result[0] + ' - ' + game.result[1] : mid=" VS ";
 
@@ -16,7 +16,7 @@ export default function GameComponent({gameId}){
                 to={`/teams/${game.club1}`}
                 key={game.club1}
             >
-            {clubs[game.club1].name}
+            {club1.name}
             </Link> 
             <b className="middle">{mid}</b>
             <Link
@@ -24,8 +24,9 @@ export default function GameComponent({gameId}){
                 to={`/teams/${game.club2}`}
                 key={game.club2}
             >
-            {clubs[game.club2].name}
-            </Link> 
+            {club2.name}
+            </Link>
+            <span className="date">{game.date}</span>
         </div>
     );
 }
