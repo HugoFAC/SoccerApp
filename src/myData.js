@@ -755,6 +755,26 @@ const clubs = {
 	}
 };
 
+const users = {
+	14157860:{
+		username: "Koala",
+		password: "pass123"
+	},
+	12345678:{
+		username: "Lemur",
+		password: "password"
+	}
+}
+
+export function getUser(usr, pass){
+	let user = Object.entries(users).filter(u => u[1].username == usr);
+	if(user.length == 0) 
+		return "No such username: " + usr;
+	if(user[0][1].password == pass)
+		return user[0][1].username;
+	return "Wrong password";
+}
+
 export function getLeagues() {
 	return leagues;
 }
@@ -825,6 +845,17 @@ export function getGamesOfClub(clubName){
 	return games.filter(game => (
 		clubs[game.club1].name.toLowerCase().includes(filter.toLowerCase()) || 
 		clubs[game.club2].name.toLowerCase().includes(filter.toLowerCase()))
+	).map((game) => {return game});
+}
+
+export function getUnplayedGames(clubName){
+	let filter = "";
+	clubName && (filter = clubName);
+	return games.filter(game => (
+		(clubs[game.club1].name.toLowerCase().includes(filter.toLowerCase()) || 
+		clubs[game.club2].name.toLowerCase().includes(filter.toLowerCase())) && 
+		game.result[0]<0
+		)
 	).map((game) => {return game});
 }
 

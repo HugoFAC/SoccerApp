@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import { getGamesOfClub } from "../myData";
+import { getUnplayedGames } from "../myData";
 import GamesComponent from "../components/gamesComponent/GamesComponent";
 
 export default function Games(){
@@ -15,7 +15,7 @@ export default function Games(){
     let year = today.getFullYear();
 
     useEffect(() => {
-        setGames(getGamesOfClub(filter));
+        setGames(getUnplayedGames(filter));
     },[filter]);
 
     return(

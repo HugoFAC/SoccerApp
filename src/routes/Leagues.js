@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, Outlet, useSearchParams } from "react-router-dom";
 import { getLeaguesByName } from "../myData";
 import { useState, useEffect } from "react";
 
