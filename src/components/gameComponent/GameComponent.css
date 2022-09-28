@@ -29,4 +29,5 @@
 .date{
     float: right;
     flex-basis: 5%;
+    margin-right: 0.2em;
 }

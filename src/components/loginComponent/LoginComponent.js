@@ -1,13 +1,16 @@
 import {useState} from 'react';
+import { useContext } from 'react';
 
-import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { getUser } from '../../myData';
+import { UserContext } from '../../contexts/UserContext';
 import './LoginComponent.css';
 
 export default function LoginComponent(){
+
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
-    const [storage, setStorage] = useLocalStorage("name", "");
+
+    const user = useContext(UserContext);
 
     const handleUserNameChange=(e)=>{
         setUserName(e.target.value)
@@ -18,7 +21,7 @@ export default function LoginComponent(){
     const handleSubmit=()=>{
         let response = getUser(username,password);
         response == username ?
-            setStorage(response) :
+            user.logUser(response) :
             alert(response);
     }
     return(

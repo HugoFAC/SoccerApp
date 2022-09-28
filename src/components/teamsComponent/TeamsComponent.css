@@ -6,9 +6,12 @@
 }
 
 .teamLine{
+    display: flex;
     border:0.1em solid black;
     border-radius: 0.2em;
     text-align: center;
-    margin: 0.1em;
-    flex-basis: 32%;
+    margin: 0.3em;
+    flex-basis: 31%;
+    justify-content: space-between;
+    padding: 0.1em;
 }
